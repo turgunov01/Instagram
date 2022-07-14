@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body: #fff;
+    --title: #000;
+    --text: #000;
+    --color-1: #8a3ab9;
+    --color-2: #cd486b;
+    --color-3: #ff0169;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: var(--body);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 992px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* header start */
+
+.body__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(--body);
+    z-index: 999;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+}
+
+.dark-theme {
+    display: block;
+}
+
+.light-theme {
+    display: none;
+}
+
+.nav__link-photo {
+    width: 30px;
+    height: 30px;
+}
+
+.body__nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon__custom {
+    transform: scale(0.7);
+    transition: .3s;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.icon__custom:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.nav__search-input {
+    background: var(--body);
+    color: var(--title);
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: rgba(128, 128, 128, 0.1);
+}
+
+.add-border {
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 5px;
+    transform: scale(0.6);
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.log__link {
+    background: unset;
+    color: var(--title);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.header__stories {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 15px;
+    max-width: 470px;
+    width: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+.header__stories::-webkit-scrollbar-thumb {
+    background: red;
+}
+
+.header__news {
+    max-width: 470px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.content__nav-image {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.content__profile-location {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.content__profile {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-1);
+    animation: borderColor 5s ease-in-out infinite alternate;
+    padding: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.content__photo {
+    max-width: 470px;
+    width: 100%;
+}
+
+.photo__box {
+    width: 100%;
+    height: 100%;
+}
+
+.content__profile-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.tick {
+    margin: 5px 0;
+}
+
+.content__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.content__nav-dots {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+}
+
+.dots__lines {
+    position: relative;
+    width: 5px;
+    background: black;
+    height: 5px;
+    top: 8px;
+    left: 0;
+    border-radius: 50%;
+}
+
+.dots__lines::after,
+.dots__lines::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background: black;
+    height: 5px;
+    top: 0;
+    left: 7px;
+    border-radius: 50%;
+}
+
+.dots__lines::before {
+    left: 14px;
+}
+
+.react__icon {
+    transform: scale(1.6);
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.content__reaction {
+    padding: 10px 15px 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content__footer {
+    padding: 10px 15px 20px 15px;
+    margin-top: 10px;
+}
+
+.liked__accounted {
+    width: 25px;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+
+.hidden__dots {
+    opacity: 0%;
+}
+
+.content__liked-accounter {
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+}
+
+.account__name {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.accounter__liked-count {
+    font-weight: 700;
+}
+
+.content__comments {
+    padding: 5px;
+}
+
+.comment__author {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+.accounter__liked-count {
+    cursor: pointer;
+}
+
+.content__comments {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.all__comments {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.published__day {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.all__comments, .published__day {
+    padding: 5px;
+}
+
+.own__comment {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment__send {
+    border: none !important;
+    outline: none !important;
+    padding: 10px ;
+}
+
+.left__icon {
+    opacity: 50%;
+    transition: .3s;
+}
+
+.left__icon:hover {
+    opacity: 100%;
+}
+
+.send__text {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #207ec6;
+    transition: .3s;
+    padding: 10px;
+}
+
+.send__text:hover {
+    color: #0861a5;
+}
+
+/* header end */
+
+
+/* Insta Loader Icon Animation */
+
+
+.circle__img {
+    width: 80px;
+    border-radius: 50%;
+    height: 80px;
+    padding: 5px;
+    animation: borderColor 5s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+
+@keyframes borderColor {
+    0% {
+        border: 2px solid var(--color-1);
+    }
+
+    25% {
+        border: 2px solid var(--color-3);
+    }
+
+    100% {
+        border: 2px solid var(--color-2);
+    }
+}
+
+@keyframes stroke-draw {
+    from {
+        stroke: #8a3ab9;
+        stroke-dasharray: 1;
+    }
+
+    to {
+        stroke: #cd486b;
+        transform: rotate(180deg);
+        stroke-dasharray: 8;
+    }
+
+}
